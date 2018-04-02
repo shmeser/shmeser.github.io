@@ -3,10 +3,10 @@
   "short_name": "Push Messages",
   "icons": [{
         "src": "/pushmessage.png",
-        "sizes": "192x192",
+        "sizes": "1920x1920",
         "type": "image/png"
       }],
   "start_url": "/",
   "display": "standalone",
-  "gcm_sender_id": "133628383319"
+  "gcm_sender_id": "133628383311"
 }
