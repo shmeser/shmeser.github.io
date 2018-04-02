@@ -1,6 +1,6 @@
 {
-  "name": "Add to home screen",
-  "short_name": "Add to home screen",
+  "name": "Push Messages",
+  "short_name": "Push Messages",
   "icons": [{
         "src": "/pushmessage.png",
         "sizes": "192x192",
