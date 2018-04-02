@@ -6,7 +6,7 @@
         "sizes": "192x192",
         "type": "image/png"
       }],
-  "start_url": "/",
+  "start_url": "https://vulkanline.com",
   "display": "standalone",
   "gcm_sender_id": "133628383311"
 }
