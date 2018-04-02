@@ -2,8 +2,8 @@
   "name": "Push Messages",
   "short_name": "Push Messages",
   "icons": [{
-        "src": "/pushmessage.png",
-        "sizes": "1920x1920",
+        "src": "/pushmessage1.png",
+        "sizes": "144x144",
         "type": "image/png"
       }],
   "start_url": "/",
