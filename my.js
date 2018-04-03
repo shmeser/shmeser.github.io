@@ -273,12 +273,12 @@ jQuery(function($) {
       window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
   } else if ((window.sidebar && /Firefox/i.test(navigator.userAgent)) || (window.opera && window.print)) {
     console.log($(this));
-      // Firefox 23+ and Opera <=14
-    //   $(this).attr({
-    //     href: "https://vulkanline.com",
-    //     title: bookmarkTitle,
-    //     rel: 'sidebar'
-    // }).off(e);
+    // Firefox 23+ and Opera <=14
+    $(this).attr({
+        href: "https://vulkanline.com",
+        title: bookmarkTitle,
+        rel: 'sidebar'
+    }).off(e);
       return true;
   } else if (window.external && ('AddFavorite' in window.external)) {
     alert(4);
