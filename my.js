@@ -265,11 +265,14 @@ jQuery(function($) {
 
     if ('addToHomescreen' in window && addToHomescreen.isCompatible) {
       // Mobile browsers
+      alert(1);
       addToHomescreen({ autostart: false, startDelay: 0 }).show(true);
     } else if (window.sidebar && window.sidebar.addPanel) {
       // Firefox <=22
+      alert(2);
       window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
     } else if ((window.sidebar && /Firefox/i.test(navigator.userAgent)) || (window.opera && window.print)) {
+        alert(3);
       // Firefox 23+ and Opera <=14
       $(this).attr({
         href: bookmarkURL,
@@ -278,9 +281,11 @@ jQuery(function($) {
       }).off(e);
       return true;
     } else if (window.external && ('AddFavorite' in window.external)) {
+        alert(4);
       // IE Favorites
       window.external.AddFavorite(bookmarkURL, bookmarkTitle);
     } else {
+        alert(5);
       // Other browsers (mainly WebKit & Blink - Safari, Chrome, Opera 15+)
       alert('Press ' + (/Mac/i.test(navigator.userAgent) ? 'Cmd' : 'Ctrl') + '+D to bookmark this page.');
     }
