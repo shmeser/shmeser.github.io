@@ -259,38 +259,15 @@ $(window).load(function() {
 
 jQuery(function($) {
 
-  $('#bookmarkme').click(function(e) {
-    var bookmarkURL = window.location.href;
-    var bookmarkTitle = document.title;
-
-    if ('addToHomescreen' in window && addToHomescreen.isCompatible) {
-      // Mobile browsers
-      alert(1);
-      addToHomescreen({ autostart: false, startDelay: 0 }).show(true);
-  } else if (window.sidebar && window.sidebar.addPanel) {
-      // Firefox <=22
-      alert(2);
-      window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
-  } else if ((window.sidebar && /Firefox/i.test(navigator.userAgent)) || (window.opera && window.print)) {
-    console.log($(this));
-    // Firefox 23+ and Opera <=14
-    $(this).attr({
-        href: "https://vulkanline.com",
-        title: bookmarkTitle,
-        rel: 'sidebar'
-    }).off(e);
+  $(document).ready(function() {
+  $("#bookmarkme").click(function() {
+    if (window.sidebar) { // Mozilla Firefox Bookmark
+      window.sidebar.addPanel(location.href,document.title,"");
+    } else if(window.external) { // IE Favorite
+      window.external.AddFavorite(location.href,document.title); }
+    else if(window.opera && window.print) { // Opera Hotlist
+      this.title=document.title;
       return true;
-  } else if (window.external && ('AddFavorite' in window.external)) {
-    alert(4);
-      // IE Favorites
-      window.external.AddFavorite(bookmarkURL, bookmarkTitle);
-  } else {
-    alert(5);
-      // Other browsers (mainly WebKit & Blink - Safari, Chrome, Opera 15+)
-      alert('Press ' + (/Mac/i.test(navigator.userAgent) ? 'Cmd' : 'Ctrl') + '+D to bookmark this page.');
-  }
-
-  return false;
-});
-  
+    }
+  });
 });
