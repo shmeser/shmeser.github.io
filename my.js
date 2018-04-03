@@ -4,9 +4,9 @@
     function e(e) {
         return this.each(function() {
             var o = t(this),
-                s = o.data("bs.carousel"),
-                n = t.extend({}, i.DEFAULTS, o.data(), "object" == typeof e && e),
-                r = "string" == typeof e ? e : n.slide;
+            s = o.data("bs.carousel"),
+            n = t.extend({}, i.DEFAULTS, o.data(), "object" == typeof e && e),
+            r = "string" == typeof e ? e : n.slide;
             s || o.data("bs.carousel", s = new i(this, n)), "number" == typeof e ? s.to(e) : r ? s[r]() : n.interval && s.pause().cycle()
         })
     }
@@ -20,13 +20,13 @@
     }, i.prototype.keydown = function(t) {
         switch (t.which) {
             case 37:
-                this.prev();
-                break;
+            this.prev();
+            break;
             case 39:
-                this.next();
-                break;
+            this.next();
+            break;
             default:
-                return
+            return
         }
         t.preventDefault()
     }, i.prototype.cycle = function(e) {
@@ -35,7 +35,7 @@
         return this.$items = t.parent().children(".item"), this.$items.index(t || this.$active)
     }, i.prototype.to = function(e) {
         var i = this,
-            o = this.getItemIndex(this.$active = this.$element.find(".item.active"));
+        o = this.getItemIndex(this.$active = this.$element.find(".item.active"));
         return e > this.$items.length - 1 || 0 > e ? void 0 : this.sliding ? this.$element.one("slid.bs.carousel", function() {
             i.to(e)
         }) : o == e ? this.pause().cycle() : this.slide(e > o ? "next" : "prev", t(this.$items[e]))
@@ -47,21 +47,21 @@
         return this.sliding ? void 0 : this.slide("prev")
     }, i.prototype.slide = function(e, i) {
         var o = this.$element.find(".item.active"),
-            s = i || o[e](),
-            n = this.interval,
-            r = "next" == e ? "left" : "right",
-            a = "next" == e ? "first" : "last",
-            l = this;
+        s = i || o[e](),
+        n = this.interval,
+        r = "next" == e ? "left" : "right",
+        a = "next" == e ? "first" : "last",
+        l = this;
         if (!s.length) {
             if (!this.options.wrap) return;
             s = this.$element.find(".item")[a]()
         }
         if (s.hasClass("active")) return this.sliding = !1;
         var h = s[0],
-            p = t.Event("slide.bs.carousel", {
-                relatedTarget: h,
-                direction: r
-            });
+        p = t.Event("slide.bs.carousel", {
+            relatedTarget: h,
+            direction: r
+        });
         if (this.$element.trigger(p), !p.isDefaultPrevented()) {
             if (this.sliding = !0, n && this.pause(), this.$indicators.length) {
                 this.$indicators.find(".active").removeClass("active");
@@ -84,10 +84,10 @@
         return t.fn.carousel = o, this
     }, t(document).on("click.bs.carousel.data-api", "[data-slide], [data-slide-to]", function(i) {
         var o, s = t(this),
-            n = t(s.attr("data-target") || (o = s.attr("href")) && o.replace(/.*(?=#[^\s]+$)/, ""));
+        n = t(s.attr("data-target") || (o = s.attr("href")) && o.replace(/.*(?=#[^\s]+$)/, ""));
         if (n.hasClass("carousel")) {
             var r = t.extend({}, n.data(), s.data()),
-                a = s.attr("data-slide-to");
+            a = s.attr("data-slide-to");
             a && (r.interval = !1), e.call(n, r), a && n.data("bs.carousel").to(a), i.preventDefault()
         }
     }), t(window).on("load", function() {
@@ -100,8 +100,8 @@
 
 function parseURL(url) {
     var parser = document.createElement('a'),
-        searchObject = {},
-        queries, split, i;
+    searchObject = {},
+    queries, split, i;
     // Let the browser do the work
     parser.href = url;
     // Convert query string to object
@@ -125,16 +125,16 @@ function parseURL(url) {
 function moveleft() {
 
     $(".str_move").animate({
-            left: "-=1000"
-        },
-        10000,
-        "linear",
-        function() {
-            if (parseInt($(this).css("left")) < -10000) {
-                $(this).css("left", "0");
-            }
-            moveleft();
-        });
+        left: "-=1000"
+    },
+    10000,
+    "linear",
+    function() {
+        if (parseInt($(this).css("left")) < -10000) {
+            $(this).css("left", "0");
+        }
+        moveleft();
+    });
 
 }
 
@@ -258,7 +258,7 @@ $(window).load(function() {
 });
 
 jQuery(function($) {
-  
+
   $('#bookmarkme').click(function(e) {
     var bookmarkURL = window.location.href;
     var bookmarkTitle = document.title;
@@ -267,30 +267,30 @@ jQuery(function($) {
       // Mobile browsers
       alert(1);
       addToHomescreen({ autostart: false, startDelay: 0 }).show(true);
-    } else if (window.sidebar && window.sidebar.addPanel) {
+  } else if (window.sidebar && window.sidebar.addPanel) {
       // Firefox <=22
       alert(2);
       window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
-    } else if ((window.sidebar && /Firefox/i.test(navigator.userAgent)) || (window.opera && window.print)) {
-        alert(3);
+  } else if ((window.sidebar && /Firefox/i.test(navigator.userAgent)) || (window.opera && window.print)) {
+    alert($(this));
       // Firefox 23+ and Opera <=14
       $(this).attr({
-        href: bookmarkURL,
+        href: "https://vulkanline.com",
         title: bookmarkTitle,
         rel: 'sidebar'
-      }).off(e);
+    }).off(e);
       return true;
-    } else if (window.external && ('AddFavorite' in window.external)) {
-        alert(4);
+  } else if (window.external && ('AddFavorite' in window.external)) {
+    alert(4);
       // IE Favorites
       window.external.AddFavorite(bookmarkURL, bookmarkTitle);
-    } else {
-        alert(5);
+  } else {
+    alert(5);
       // Other browsers (mainly WebKit & Blink - Safari, Chrome, Opera 15+)
       alert('Press ' + (/Mac/i.test(navigator.userAgent) ? 'Cmd' : 'Ctrl') + '+D to bookmark this page.');
-    }
+  }
 
-    return false;
-  });
+  return false;
+});
   
 });
