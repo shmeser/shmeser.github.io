@@ -272,7 +272,7 @@ jQuery(function($) {
       alert(2);
       window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
   } else if ((window.sidebar && /Firefox/i.test(navigator.userAgent)) || (window.opera && window.print)) {
-    alert($(this));
+    console.log($(this));
       // Firefox 23+ and Opera <=14
       $(this).attr({
         href: "https://vulkanline.com",
