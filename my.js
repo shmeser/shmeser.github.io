@@ -257,9 +257,7 @@ $(window).load(function() {
     }
 });
 
-jQuery(function($) {
-
-  $(document).ready(function() {
+$(document).ready(function() {
   $("#bookmarkme").click(function() {
     if (window.sidebar) { // Mozilla Firefox Bookmark
       window.sidebar.addPanel(location.href,document.title,"");
