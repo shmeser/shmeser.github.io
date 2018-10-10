@@ -15,17 +15,11 @@ new Vue({
     mounted() {
         axios({
             method: 'post',
-//            contentType: 'application/x-www-form-urlencoded',
             url: 'https://api.admitad.com/token/',
-            data: 'code=87eaa2f4587345bad56c99ccdd71cb&client_secret=202aa3513778f233c63bd5c572e889&grant_type=authorization_code&client_id=a3205734413fcbef29ee6f18945716&redirect_uri=https%3A%2F%2Fgoogle.com%2F'
-//                    {
-//                grant_type: 'client_credentials',
-//                client_id: 'a3205734413fcbef29ee6f18945716',
-//                scope: 'advcampaigns banners websites'
+            data: 'code=2124ca07a8230a01caf675ccd87716&client_secret=202aa3513778f233c63bd5c572e889&grant_type=authorization_code&client_id=a3205734413fcbef29ee6f18945716&redirect_uri=https%3A%2F%2Fgoogle.com%2F'
             ,
             config: {
                 headers: {
-                    'Authorization': 'Basic YTMyMDU3MzQ0MTNmY2JlZjI5ZWU2ZjE4OTQ1NzE2OjIwMmFhMzUxMzc3OGYyMzNjNjNiZDVjNTcyZTg4OQ==',
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
             }
