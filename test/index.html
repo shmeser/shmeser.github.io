@@ -17,7 +17,7 @@ and open the template in the editor.
     <body>
         <div id="app">
             <h1>Bitcoin Price Index</h1>
-
+            {{info}}
             <section v-if="errored">
                 <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
             </section>
@@ -38,13 +38,22 @@ and open the template in the editor.
 
             </section>
         </div>
+
+        <form action="https://api.admitad.com/authorize/" method="GET" enctype="application/x-www-form-urlencoded">
+            <input type="text" name="scope" value="advcampaigns banners websites">
+            <input type="text" name="state" value="000111000">
+            <input type="text" name="redirect_uri" value="https://shmeser.github.io/test/">
+            <input type="text" name="response_type" value="code">
+            <input type="text" name="client_id" value="a3205734413fcbef29ee6f18945716">
+            <button type="submit">SEND GET</button>
+        </form>
         
         <form action="https://api.admitad.com/token/" method="POST" enctype="application/x-www-form-urlencoded">
             <input type="text" name="code" value="c2acd1e35a2f5bd0dcd2ac0cc86eb0">
             <input type="text" name="client_secret" value="202aa3513778f233c63bd5c572e889">
             <input type="text" name="grant_type" value="authorization_code">
             <input type="text" name="client_id" value="a3205734413fcbef29ee6f18945716">
-            <input type="text" name="redirect_uri" value="https://shmeser.github.io/">
+            <input type="text" name="redirect_uri" value="https://shmeser.github.io/test/">
             <button type="submit">SEND</button>
         </form>
 
@@ -68,14 +77,11 @@ and open the template in the editor.
             },
             mounted() {
                 axios({
-//                method: "GET",
-//                url: 'https://api.coindesk.com/v1/bpi/currentprice.json',
-                method: "POST",
-                url: 'https://api.admitad.com/token/',
-                data: 'c=1'
-            }).then(response => {
-                            this.info = response.data.bpi;
-                        })
+                    method: "GET",
+                    url: 'https://api.admitad.com/authorize/?scope=advcampaigns banners websites&state=000&redirect_uri=https%3A%2F%2Fshmeser.github.io%2F&response_type=code&client_id=a3205734413fcbef29ee6f18945716',
+                }).then(response => {
+                    this.info = response;
+                })
                         .catch(error => {
                             console.log(error);
                             this.errored = true;
