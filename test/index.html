@@ -15,19 +15,73 @@ and open the template in the editor.
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     </head>
     <body>
+        <div id="app">
+            <h1>Bitcoin Price Index</h1>
 
+            <section v-if="errored">
+                <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
+            </section>
+
+            <section v-else>
+                <div v-if="loading">Loading...</div>
+
+                <div
+                    v-else
+                    v-for="currency in info"
+                    class="currency"
+                    >
+                    {{ currency.description }}:
+                    <span class="lighten">
+                        <span v-html="currency.symbol"></span>{{ currency.rate_float | currencydecimal }}
+                    </span>
+                </div>
+
+            </section>
+        </div>
+        
+        <form action="https://api.admitad.com/token/" method="POST" enctype="application/x-www-form-urlencoded">
+            <input type="text" name="code" value="3b0ea3b04405c0ff8f298e48517436">
+            <input type="text" name="client_secret" value="202aa3513778f233c63bd5c572e889">
+            <input type="text" name="grant_type" value="authorization_code">
+            <input type="text" name="client_id" value="a3205734413fcbef29ee6f18945716">
+            <input type="text" name="redirect_uri" value="https%3A%2F%2Fshmeser.github.io%2F">
+            <button type="submit">SEND</button>
+        </form>
 
     </body>
+    <script src="../vue.js"></script>
+    <script src="../axios.js"></script>
     <script>
-        $.ajax({
-            method: "POST",
-            url: 'https://api.admitad.com/token/',
-            data: 'code=2124ca07a8230a01caf675ccd87716&client_secret=202aa3513778f233c63bd5c572e889&grant_type=authorization_code&client_id=a3205734413fcbef29ee6f18945716&redirect_uri=https%3A%2F%2Fgoogle.com%2F'
-        }).done(function () {
-            alert("success");
-        }).fail(function () {
-            alert("error");
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    info: null,
+                    loading: true,
+                    errored: false
+                };
+            },
+            filters: {
+                currencydecimal(value) {
+                    return value.toFixed(2);
+                }
+            },
+            mounted() {
+                axios({
+//                method: "GET",
+//                url: 'https://api.coindesk.com/v1/bpi/currentprice.json',
+                method: "POST",
+                url: 'https://api.admitad.com/token/',
+                data: 'c=1'
+            }).then(response => {
+                            this.info = response.data.bpi;
+                        })
+                        .catch(error => {
+                            console.log(error);
+                            this.errored = true;
+                        })
+                        .finally(() => (this.loading = false));
+            }
         });
-
     </script>
 </html>
