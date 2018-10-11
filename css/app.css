@@ -17,10 +17,29 @@
 .card-header-how,.card-content-how{
     font-size : 14px;
 }
-/*
-*/
+
 .card-header-offer{
 }
+
+.card-footer-offer{
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+}
+.card-footer-offer>div{
+    flex:1;
+}
+.card-footer-offer .card-subtitle{
+    flex: 2;
+}
+.card-footer-offer .card-text{
+    font-weight: 600;
+}
+.card-footer-offer .card-title{
+    font-size: 18px;
+    font-weight: 600;
+}
+
 
 .container{
     max-width: 960px;

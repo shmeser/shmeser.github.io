@@ -10,13 +10,11 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <script src="../jquery-3.3.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="../js/jquery-3.3.1.min.js"></script>
     </head>
     <body>
         <div id="app">
-            <h1>Bitcoin Price Index</h1>
+<!--            <h1>Bitcoin Price Index</h1>
             {{info}}
             <section v-if="errored">
                 <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
@@ -36,11 +34,11 @@ and open the template in the editor.
                     </span>
                 </div>
 
-            </section>
+            </section>-->
         </div>
 
         <form action="https://api.admitad.com/authorize/" method="GET" enctype="application/x-www-form-urlencoded">
-            <input type="text" name="scope" value="advcampaigns banners websites">
+            <input type="text" name="scope" value="advcampaigns advcampaigns_for_website banners coupons coupons_for_website websites">
             <input type="text" name="state" value="000111000">
             <input type="text" name="redirect_uri" value="https://shmeser.github.io/test/">
             <input type="text" name="response_type" value="code">
@@ -58,8 +56,8 @@ and open the template in the editor.
         </form>
 
     </body>
-    <script src="../vue.js"></script>
-    <script src="../axios.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/axios.js"></script>
     <script>
         new Vue({
             el: '#app',
