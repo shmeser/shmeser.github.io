@@ -1,13 +1,8 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta name="verify-admitad" content="b4350d1376" />
-        <title>TODO supply a title</title>
+        <title>ADMITAD</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -16,22 +11,32 @@ and open the template in the editor.
     </head>
     <body>
         <div class="container-fluid bg-f0" id="app">
-
-            <!--            {{ info }}
-                        <section v-if="errored">
-                            <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
-                        </section>
-            
-                        <section v-else>
-                            <div v-if="loading">Loading...</div>
-            
-                            <div
-                                v-else
-                                >
-                                {{ info }}:
+           <div class="row bg-mail menu_toolbar" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-xs-12">
+                            <div class="pm-menu">
+                                <div class="row">
+                                    <div class="pm-menu-left">
+                                        <a href="/" class="pm-logo"><img src="images/mailru.png" alt="mailru"/></a>
+                                    </div>
+                                    <div class="pm-menu-center">
+                                        <a href="" class="fb5"><div class="">Каталог</div></a>
+                                        <a href="" class="fb5"><div class="">Мои игры</div></a>
+                                        <a href="" class="fb5"><div class="">Игромаркет</div></a>
+                                        <a href="" class="fb5"><div class="">Акции</div></a>
+                                        <a href="" class="fb10"><div class="">Все об играх</div></a>
+                                        <div class=""></div>
+                                        <a href="" class="fb15 pm-menu-download"><div class="">Игровой центр</div><div>Загрузить</div></a>
+                                        <div class="pm-menu-search fb15"><input type="text" class="" placeholder="Поиск по сайту"></div>
+                                        <a href="" class="pm-menu-call"><img src="images/headset.png" alt="call"/></a>
+                                    </div>
+                                </div>
                             </div>
-            
-                        </section>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="row bg-33 pb-5">
                 <nav class="container py-1 ">
@@ -114,7 +119,7 @@ and open the template in the editor.
                 </div>
 
                 <div class="row justify-content-between">
-                    <div v-for="offer in offers.slice(0,8)" class="card col-md-3 py-3">
+                    <div v-for="offer in offers.slice(0,8)" class="card card-item">
                         <div class="card-header-offer">
                             <div class="row">
                                 <div class="col-xs-6 col-lg-6">
@@ -139,19 +144,19 @@ and open the template in the editor.
 
             </div>
         </div>
-        <footer>
+        <footer class="c84">
             <div class="row bg-33 p-3">
                 <div class="container">
                     <div class="row">
-                        <div class="col-4 col-md">
+                        <div class="col-4 col-md-4">
                             <h5 class="text-white">CASHBACK</h5>
                         </div>
-                        <div class="col-6 col-md">
+                        <div class="col-6 col-md-6">
                             <a href="">Как это работает</a>
                             <a href="">Магазины</a>
                             <a href="">Спецпредложения</a>
                         </div>
-                        <div class="col-4 col-md social">
+                        <div class="col-2 col-md-2 social">
                             <a href=""><i class="fa fa-facebook-f"></i></a>
                             <a href=""><i class="fa fa-vk"></i></a>
                             <a href=""><i class="fa fa-twitter"></i></a>
@@ -162,13 +167,13 @@ and open the template in the editor.
             <div class="row bg-2d p-3">
                 <div class="container">
                     <div class="row">
-                        <div class="col-4 col-md">@MAIL.RU 2018</div>
-                        <div class="col-6 col-md">
+                        <div class="col-4 col-md-4">@MAIL.RU 2018</div>
+                        <div class="col-6 col-md-6">
                             <a href="">Соглашение</a>
                             <a href="">О компании</a>
                             <a href="">Техподдержка</a>
                         </div>
-                        <div class="col-4 col-md">18+</div>
+                        <div class="col-2 col-md-2">18+</div>
                     </div>
                 </div>
             </div>
