@@ -13,7 +13,7 @@
     word-wrap: break-word;
     background-clip: border-box;
     cursor: pointer;
-    max-width: 22%;
+    
     text-align: center;
 }
 .card-header-how,.card-content-how{
