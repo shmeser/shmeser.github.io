@@ -83,13 +83,11 @@
 }
 .menu_toolbar{
     z-index: 3;
-    height: 56px;
+    min-height: 56px;
 }
 .pm-menu{
-    height: 56px;
 }
 .pm-menu-center>*{
-    flex: 1;
     justify-content: center;
     height: 100%;
     align-items: center;
@@ -101,9 +99,9 @@
 }
 .pm-menu-center{
     display: flex;
-    flex-basis: 88%;
+    /* flex-basis: 88%; */
     flex-flow: row;
-    flex-wrap: nowrap;
+    /* flex-wrap: nowrap; */
 }
 .pm-menu-center > a:hover{
     background-color: #0048bd;
@@ -111,7 +109,7 @@
 .pm-menu-left{
     justify-content: center;
     display: flex;
-    flex-basis: 10%;
+    /* flex-basis: 10%; */
     height: 56px;
 }
 .pm-logo{
@@ -128,6 +126,7 @@
     width: 30px;
     height: 30px;
     position: absolute;
+    top: 3px;
     left: 10px;
     background: url('../images/down.png');
     background-size: contain;
