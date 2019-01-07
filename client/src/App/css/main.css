@@ -15,8 +15,9 @@ body, #root{
 .matrix{
     display: flex;
     flex-flow: column;
-    margin: 30px auto;
+    margin: 70px auto 10px;
     width: 300px;
+    position: relative;
 }
 .row{
     display: flex;
@@ -27,13 +28,52 @@ body, #root{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
-    border: 1px solid #ffffff;
+    width: 94px;
+    height: 94px;
+    margin: 3px;
+    border: 1px solid #e2e099;
 }
-.row:nth-child(1) div, .row:nth-child(2) div{
-    border-bottom: none;
+.row div:hover{
+    border-color: #09c5e0;
+    color: #09c5e0;
 }
-.row div:nth-child(1), .row div:nth-child(2){
-    border-right: none;
+.buttons{
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 40px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.buttons-col{
+    height: 302px;
+    top: 0;
+}
+.buttons-row{
+    width: 300px;
+    height: 40px;
+    left: 0;
+    flex-flow: row;
+}
+.btn-diag{
+    height: 402px;
+    justify-content: space-between;
+}
+.btn{
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: 1px solid #09c5e0;
+    border-radius: 5px;
+    color: #FFF;
+    word-wrap: break-word;
+    font-size: 14px;
+    cursor:pointer;
+}
+.btn:hover{
+    border-color: #FFF;
+    transition: 0.2s;
+    color: #09c5e0;
 }
