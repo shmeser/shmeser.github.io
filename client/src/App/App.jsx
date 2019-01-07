@@ -2,7 +2,7 @@ import React from 'react';
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
-
+import desc from './desc.json';
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -77,10 +77,24 @@ class App extends React.Component {
         }
         return digits;
     }
+    getDesc = (n,f) => {
+        console.log(n,f);
+    }
 
     render() {
+        const digits = [
+            this.getDigit(0),
+            this.getDigit(1),
+            this.getDigit(2),
+            this.getDigit(3),
+            this.getDigit(4),
+            this.getDigit(5),
+            this.getDigit(6),
+            this.getDigit(7),
+            this.getDigit(8),
+            this.getDigit(9)];
         return (
-            <div>
+            <div className={'container'}>
                 <DatePicker
                     dateFormat={'dd.MM.yyyy'}
                     selected={this.state.date}
@@ -90,19 +104,19 @@ class App extends React.Component {
                 <button onClick={this.calcHandler}>Посчитать</button>
                 <div className={"matrix"}>
                     <div className={"row"}>
-                        <div>{this.getDigit(1)}</div>
-                        <div>{this.getDigit(4)}</div>
-                        <div>{this.getDigit(7)}</div>
+                        <div onClick={this.getDesc(1,digits[1])}>{digits[1]}</div>
+                        <div onClick={this.getDesc(4,digits[4])}>{digits[4]}</div>
+                        <div onClick={this.getDesc(7,digits[7])}>{digits[7]}</div>
                     </div>
                     <div className={"row"}>
-                        <div>{this.getDigit(2)}</div>
-                        <div>{this.getDigit(5)}</div>
-                        <div>{this.getDigit(8)}</div>
+                        <div onClick={this.getDesc(2,digits[2])}>{digits[2]}</div>
+                        <div onClick={this.getDesc(5,digits[5])}>{digits[5]}</div>
+                        <div onClick={this.getDesc(8,digits[8])}>{digits[8]}</div>
                     </div>
                     <div className={"row"}>
-                        <div>{this.getDigit(3)}</div>
-                        <div>{this.getDigit(6)}</div>
-                        <div>{this.getDigit(9)}</div>
+                        <div onClick={this.getDesc(3,digits[3])}>{digits[3]}</div>
+                        <div onClick={this.getDesc(6,digits[6])}>{digits[6]}</div>
+                        <div onClick={this.getDesc(9,digits[9])}>{digits[9]}</div>
                     </div>
                 </div>
             </div>
