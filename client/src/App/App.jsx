@@ -77,8 +77,11 @@ class App extends React.Component {
         }
         return digits;
     }
-    getDesc = (n,f) => {
-        console.log(n,f);
+    getDesc = (e) => {
+        const n = e.target.id;
+        const d = e.target.textContent;
+        const description = desc[n][d];
+        console.log(description);
     }
 
     render() {
@@ -104,19 +107,19 @@ class App extends React.Component {
                 <button onClick={this.calcHandler}>Посчитать</button>
                 <div className={"matrix"}>
                     <div className={"row"}>
-                        <div onClick={this.getDesc(1,digits[1])}>{digits[1]}</div>
-                        <div onClick={this.getDesc(4,digits[4])}>{digits[4]}</div>
-                        <div onClick={this.getDesc(7,digits[7])}>{digits[7]}</div>
+                        <div id={'1'} onClick={this.getDesc}>{digits[1]}</div>
+                        <div id={'4'} onClick={this.getDesc}>{digits[4]}</div>
+                        <div id={'7'} onClick={this.getDesc}>{digits[7]}</div>
                     </div>
                     <div className={"row"}>
-                        <div onClick={this.getDesc(2,digits[2])}>{digits[2]}</div>
-                        <div onClick={this.getDesc(5,digits[5])}>{digits[5]}</div>
-                        <div onClick={this.getDesc(8,digits[8])}>{digits[8]}</div>
+                        <div id={'2'} onClick={this.getDesc}>{digits[2]}</div>
+                        <div id={'5'} onClick={this.getDesc}>{digits[5]}</div>
+                        <div id={'8'} onClick={this.getDesc}>{digits[8]}</div>
                     </div>
                     <div className={"row"}>
-                        <div onClick={this.getDesc(3,digits[3])}>{digits[3]}</div>
-                        <div onClick={this.getDesc(6,digits[6])}>{digits[6]}</div>
-                        <div onClick={this.getDesc(9,digits[9])}>{digits[9]}</div>
+                        <div id={'3'} onClick={this.getDesc}>{digits[3]}</div>
+                        <div id={'6'} onClick={this.getDesc}>{digits[6]}</div>
+                        <div id={'9'} onClick={this.getDesc}>{digits[9]}</div>
                     </div>
                 </div>
             </div>
