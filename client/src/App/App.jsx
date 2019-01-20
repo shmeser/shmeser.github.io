@@ -102,7 +102,10 @@ class App extends React.Component {
 
     getDesc = (e) => {
         const n = e.target.id;
-        const c = e.target.textContent.length;
+        let c = e.target.textContent.length;
+        while(!desc[n][c]){
+            c--;
+        }
         const description = desc[n][c]['description'];
         console.log(description);
     }
@@ -111,7 +114,12 @@ class App extends React.Component {
         const n = e.target.id;
         let c = this.countDigitsInLine(n);
         c=c>6?6:c;
-        const description = desc[n][c];
+        let description;
+        if(desc[n][c]){
+            description = desc[n][c];
+        }else{
+            description='None';
+        }
         console.log(description);
     }
 
