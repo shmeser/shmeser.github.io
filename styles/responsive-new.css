@@ -217,9 +217,6 @@
 
 }
 @media screen and (min-width: 320px) and (max-width: 767px){
-    /*     body * {
-            outline: 1px solid red;
-        } */
     .hide-320{
         display: none;
     }
@@ -272,6 +269,9 @@
     }
 
     /* platform-features */
+    .platform-features {
+        background:#f8f8f8;
+    }
     .platform-features .container{
         padding-top: 40px;
     }
@@ -287,6 +287,7 @@
         height: auto;
         margin-bottom: 25px;
         margin-top: 57px;
+        background: none;
     }
     .feature__image{
         width: 56px;
@@ -321,6 +322,7 @@
     }
     .dev-cycle__link-text{
         font-size: 14px;
+        text-align: left;
     }
     .dev-cycle-item--hidden{
         display: none;
@@ -328,6 +330,7 @@
     .dev-cycle-item__image{
         width: 26px;
         height: 26px;
+        margin-right: 10px;
     }
 
     /* free-consult */
@@ -336,6 +339,7 @@
     }
     .free-consult .container{
         padding-top: 40px;
+        padding-bottom: 10px;
     }
     .free-consult-inner-container{
         width: 310px;
@@ -346,9 +350,11 @@
     .free-consult-form__button{
         width: 100%;
         box-sizing: border-box;
+        height: 48px;
     }
     .form-part{
         margin-bottom: 25px;
+        width: 100%;
     }
 
     /* clients */
@@ -370,17 +376,16 @@
     }
     /* cases */
     .cases{
-
         padding-bottom: 500px;
     }
     .cases .container{
         padding-top: 50px;
     }
     .cases-block-item{
-
         flex-flow: column;
-
         height: auto;
+        box-shadow: 0px 8px 10px -5px #dfd3d3a6;
+
     }
     .cases-item-description{
         width: 100%;
@@ -394,6 +399,7 @@
         width: 290px;
         height: 200px;
         object-fit: cover;
+        border-radius: 4px 4px 0 0;
     }
     .item-description__header{
         font-size: 20px;
@@ -434,13 +440,12 @@
         width: 324px;
     }
     .request-block__form .form-group:nth-child(5){
-        /* position: relative; */
-        /* top: -42px; */
     }
     .request-block-form__p{
         width: 100%;
         margin-top: 20px;
     }
+
     .request-block-form-file-description{
         width: 230px;
     }
