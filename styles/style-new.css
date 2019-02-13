@@ -101,7 +101,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 56px;
     padding: 0;
 }
 .nav-header *{
@@ -117,6 +117,7 @@ section {
     font-weight: 500;
     color: #0b0b0b;
     position: relative;
+    width: 55%;
 }
 .menu-language__link {
     color: #5F5F5F;
@@ -146,11 +147,10 @@ section {
     margin-right: 10px;
 }
 .menu-item{
-    margin: 0 10px;
     display: inline-flex;
 }
 .menu-logo{
-    margin-right: 200px;
+    margin-right: auto;
 }
 .menu-language{
     position: absolute;

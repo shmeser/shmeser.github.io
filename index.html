@@ -339,47 +339,47 @@
             <img src="images/logo-footer.png" alt="" class="footer-background hide-320">
             <div class="link-container">
                 <!--<div class="link-container-row">-->
-                    <div class="link-block">
-                        <h4 class="link-block__header">Меню</h4>
-                        <a href="" class="link_block__link">Главная</a>
-                        <a href="" class="link_block__link">Портфолио</a>
-                        <a href="" class="link_block__link">О компании</a>
-                        <a href="" class="link_block__link">Вакансии</a>
-                    </div>
-                    <div class="link-block">
-                        <h4 class="link-block__header">Предложения</h4>
-                        <a href="" class="link_block__link">Бизнесу</a>
-                        <a href="" class="link_block__link">Стартапам</a>
-                        <a href="" class="link_block__link">Разработка Android</a>
-                        <a href="" class="link_block__link">Разработка IOS</a>
-                    </div>
-                    <div class="link-block">
-                        <h4 class="link-block__header">Блог</h4>
-                        <a href="" class="link_block__link">О разработке</a>
-                        <a href="" class="link_block__link">О дизайне</a>
-                        <a href="" class="link_block__link">Отвечаем на вопросы</a>
-                        <a href="" class="link_block__link">Идеи приложений</a>
-                    </div>
+                <div class="link-block">
+                    <h4 class="link-block__header">Меню</h4>
+                    <a href="" class="link_block__link">Главная</a>
+                    <a href="" class="link_block__link">Портфолио</a>
+                    <a href="" class="link_block__link">О компании</a>
+                    <a href="" class="link_block__link">Вакансии</a>
+                </div>
+                <div class="link-block">
+                    <h4 class="link-block__header">Предложения</h4>
+                    <a href="" class="link_block__link">Бизнесу</a>
+                    <a href="" class="link_block__link">Стартапам</a>
+                    <a href="" class="link_block__link">Разработка Android</a>
+                    <a href="" class="link_block__link">Разработка IOS</a>
+                </div>
+                <div class="link-block">
+                    <h4 class="link-block__header">Блог</h4>
+                    <a href="" class="link_block__link">О разработке</a>
+                    <a href="" class="link_block__link">О дизайне</a>
+                    <a href="" class="link_block__link">Отвечаем на вопросы</a>
+                    <a href="" class="link_block__link">Идеи приложений</a>
+                </div>
                 <!--</div>-->
                 <!--<div class="link-container-row">-->
-                    <div class="link-block">
-                        <h4 class="link-block__header">Мы в соцсетях</h4>
-                        <a href="" class="link_block__link">Facebook</a>
-                        <a href="" class="link_block__link">VK</a>
-                        <a href="" class="link_block__link">Dribbble</a>
-                        <a href="" class="link_block__link">Instagram</a>
-                        <a href="" class="link_block__link">Telegram</a>
-                    </div>
-                    <div class="link-block link-block--wide">
-                        <h4 class="link-block__header">Связаться с нами</h4>
-                        <a href="" class="link_block__link">support@appcraft.pro</a>
-                        <a href="" class="link_block__link">Тел. 8 800 250 70 89 (Москва)</a>
-                        <form class="link_block-form">
-                            <!--<label for="footer-email" class="link-block-form__label">Ваш e-mail для связи</label>-->
-                            <input id="footer-email" name="footer-email" type="text" class="link-block-form__input" placeholder="Ваш email">
-                            <button class="link-block-form__button"><img class="link-block-form__image" src="./images/path-2@3x.png"></button>
-                        </form>
-                    </div>
+                <div class="link-block">
+                    <h4 class="link-block__header">Мы в соцсетях</h4>
+                    <a href="" class="link_block__link">Facebook</a>
+                    <a href="" class="link_block__link">VK</a>
+                    <a href="" class="link_block__link">Dribbble</a>
+                    <a href="" class="link_block__link">Instagram</a>
+                    <a href="" class="link_block__link">Telegram</a>
+                </div>
+                <div class="link-block link-block--wide">
+                    <h4 class="link-block__header">Связаться с нами</h4>
+                    <a href="" class="link_block__link">support@appcraft.pro</a>
+                    <a href="" class="link_block__link">Тел. 8 800 250 70 89 (Москва)</a>
+                    <form class="link_block-form">
+                        <!--<label for="footer-email" class="link-block-form__label">Ваш e-mail для связи</label>-->
+                        <input id="footer-email" name="footer-email" type="text" class="link-block-form__input" placeholder="Ваш email">
+                        <button class="link-block-form__button"><img class="link-block-form__image" src="./images/path-2@3x.png"></button>
+                    </form>
+                </div>
                 <!--</div>-->
             </div>
             <div class="bottom-links">
@@ -402,30 +402,47 @@
 <script>
     /* NAV HEADER */
     $(document).ready(function(){
-        var scrollH = $(window).scrollTop();
-        var up = true;
+        var scrollH = $(window).scrollTop(); //Высота скролла
+        var up = true; // Скролл вверх = да
+        var navH = $('.nav').height(); // Высота навбара
+        var changedScrollPos = 0; // Позиция после смены направления
+        var changedOffsetPos = 0; // Позиция сдвига после смены направления
+        var changedScrollAmount = 0; // Величина скролла после смены направления
+        var navOffset = 0; // Сдвиг навбара
+        var navOffsetUp = 0;
+        var navOffsetDown = 0;
 
         $(window).on('scroll', function(){
-            var navH = $('.nav').height();
-            var nowScrollH = $(this).scrollTop();
-            if(nowScrollH<scrollH){
+            var nowScrollH = $(this).scrollTop(); // Текущая величина скролла
+            if(nowScrollH<scrollH){ // Если скролл вниз то выезжает и фиксируется
+                if(up!=false){
+                    changedScrollPos = nowScrollH;
+                    changedOffsetPos = navOffset;
+                    // console.log(`Direction changed on down at ${changedScrollPos}`);
+                }
                 up = false;
-            }else{
+                navOffset = changedOffsetPos -(changedScrollPos- scrollH);
+                if(navOffset<0){
+                    navOffset = 0;
+                }
+            }else{ // Если скролл вверх то убирается
+                if(up!=true){
+                    changedScrollPos = nowScrollH;
+                    changedOffsetPos = navOffset;
+                    // console.log(`Direction changed on up at ${changedScrollPos}`);
+                }
                 up = true;
+                navOffset =  changedOffsetPos + nowScrollH-changedScrollPos ;
+                if(navOffset>navH){
+                    navOffset=navH;
+                }
             }
             scrollH = nowScrollH;
-            if(up){
-                $('.nav').css('top', -scrollH);
-                $('.nav').removeClass('fixed-nav');
-                if(nowScrollH<=navH){
-                    $('.nav').removeClass('hide-nav');
-                }else{
-                    $('.nav').addClass('hide-nav');
-                }
-            }else{
-                $('.nav').css('top', 0);
+            $('.nav').css('top', -navOffset);
+            if(nowScrollH>navH){
                 $('.nav').addClass('fixed-nav');
-                $('.nav').removeClass('hide-nav');
+            }else{
+                $('.nav').removeClass('fixed-nav');
             }
         });
     });
