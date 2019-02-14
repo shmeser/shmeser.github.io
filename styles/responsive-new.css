@@ -1,7 +1,12 @@
+@media screen and (min-width: 1440px){
+    .hide-1440{
+        display: none !important;
+    }
+}
 @media screen and (min-width: 768px) and (max-width: 1439px){
 
     .hide-768{
-        display: none;
+        display: none !important;
     }
     .container {
         width: 678px;
@@ -89,8 +94,43 @@
         padding-bottom: 30px;
     }
     .dev-cycle-item{
+        display: flex;
         width: 323px;
+        height: 58px;
         margin-bottom: 10px;
+    }
+    .expanded .dev-cycle-item__header{
+        margin-bottom: 12px;
+    }
+    .dev-cycle-item__header{
+        margin-bottom: 0;
+    }
+    .expanded .dev-cycle__text{
+        display: initial;
+    }
+    .dev-cycle__text{
+        display: none;
+    }
+    .dev-cycle-item.expanded{
+        display: block;
+        height: 264px;
+    }
+    .dev-two-cols{
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .dev-cycle-container-col{
+        width: 50%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .dev-cycle-container-col:last-child{
+        align-items: flex-end;
     }
     .dev-cycle-item--link{
         width: 378px;
@@ -110,6 +150,10 @@
         width: 26px;
         height: 26px;
     }
+    .dev-cycle-item__image--arrow{
+        margin-bottom:0;
+    }
+
 
     /* free-consult */
     .free-consult-outer-container, .request-block-outer-container{
@@ -151,15 +195,15 @@
     }
     /* cases */
     .cases{
-        
-padding-bottom: 276px;
+
+        padding-bottom: 276px;
     }
     .cases .container{
         padding-top: 50px;
     }
     .cases-block-item{
-        
-box-shadow: 0 3px 4px 0 rgba(0,12,58,0.1);
+
+        box-shadow: 0 3px 4px 0 rgba(0,12,58,0.1);
     }
     .cases-item__image{
         width: 412px;
@@ -323,8 +367,8 @@ box-shadow: 0 3px 4px 0 rgba(0,12,58,0.1);
 
     /* dev-cycle */
     .dev-cycle{
-        
-padding-bottom: 200px;
+
+        padding-bottom: 200px;
     }
     .dev-cycle .container{
         padding-top:40px;
@@ -333,8 +377,26 @@ padding-bottom: 200px;
         padding-bottom: 30px;
     }
     .dev-cycle-item{
+        display: flex;
         width: 100%;
+        height: 58px;
         margin-bottom: 10px;
+    }
+    .expanded .dev-cycle-item__header{
+        margin-bottom: 12px;
+    }
+    .dev-cycle-item__header{
+        margin-bottom: 0;
+    }
+    .expanded .dev-cycle__text{
+        display: initial;
+    }
+    .dev-cycle__text{
+        display: none;
+    }
+    .dev-cycle-item.expanded{
+        display: block;
+        height: 264px;
     }
     .dev-cycle-item--link{
         width: 378px;
@@ -354,6 +416,9 @@ padding-bottom: 200px;
         width: 26px;
         height: 26px;
         margin-right: 10px;
+    }
+    .dev-cycle-item__image--arrow{
+        margin-bottom:0;
     }
 
     /* free-consult */
