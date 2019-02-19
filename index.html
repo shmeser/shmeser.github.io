@@ -9,8 +9,9 @@
           content="разработка мобильных приложений для бизнеса, заказать мобильное приложение для бизнеса, мобильное приложение для бизнеса на заказ, стоимость мобильного приложения для бизнеса"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/style-new.css?v=0">
-    <link rel="stylesheet" href="styles/responsive-new.css?v=0">
+    <link rel="stylesheet" href="styles/style-new.css">
+    <link rel="stylesheet" href="styles/responsive-new.css">
+    <link rel="stylesheet" href="styles/new-liquid.css">
     <!--<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">-->
     <!--<link rel="icon" href="./favicon.ico" type="image/x-icon">-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:extra-bold,regular,100,200,300,400,500,600,800" rel="stylesheet">
@@ -99,13 +100,17 @@
     </section>
 
     <section class="main-screen">
-        <video autoplay muted loop id="ios-app-bg" class="main-background__video">
-            <source src="./images/ios-app-bg.mp4" type="video/mp4">
-        </video>
         <div class="container">
             <!--<img src="./images/hero@2x.jpg" alt="" class="main-background">-->
-            <img src="./images/black-clay-ios-image.png" alt="" class="main-block__image">
             <div class="main-block-container">
+                <div class="main-block__image">
+                        <img src="/images/test-liquid.svg" alt="" class="main-bg-overlay__image"/>
+                        <video autoplay muted loop id="bg-new-liquid" class="main-background__video-new">
+                            <source src="./images/hero-video.mp4" type="video/mp4">
+                        </video>
+                            <img src="/images/test-liquid-1.svg" alt="" class="main-bg-overlay__image--1"/>
+                            <img src="/images/test-liquid-2.svg" alt="" class="main-bg-overlay__image--2"/>
+                </div>
                 <h1 class="header-main">Разработка приложений для iOS</h1>
                 <div class="main-block-content">
                     <ul class="main-block__list">
